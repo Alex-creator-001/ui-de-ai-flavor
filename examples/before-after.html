@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>去 AI 味：前后对比</title>
+<style>
+  :root {
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial,
+      "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans CN", sans-serif;
+    --gray-1:#fcfcfd; --gray-2:#f9f9fb; --gray-3:#f0f0f3; --gray-4:#e8e8ec; --gray-6:#d9d9e0; --gray-11:#60646c; --gray-12:#1c2024;
+    --accent:#0090ff;
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:var(--font-sans); background:var(--gray-2); color:var(--gray-12); }
+  .wrap { display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:24px; padding:32px; max-width:1100px; margin:0 auto; }
+  h1.page { font-size:20px; font-weight:600; margin:32px auto 0; max-width:1100px; padding:0 32px; }
+  .label { font-size:12px; color:var(--gray-11); margin-bottom:8px; }
+
+  /* BEFORE: 典型 AI slop */
+  .before { background:linear-gradient(135deg,#7c3aed,#4f46e5); padding:20px; border-radius:20px; font-family:"Space Grotesk",system-ui,sans-serif; text-align:center; }
+  .before .card { background:rgba(255,255,255,.85); border:1px solid #a78bfa; border-left:4px solid #ec4899; border-radius:20px; padding:20px;
+    box-shadow:0 10px 30px rgba(124,58,237,.4),0 2px 6px rgba(0,0,0,.2); }
+  .before .eyebrow { font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:#7c3aed; }
+  .before h2 { font-size:34px; margin:6px 0; }
+  .before p { font-size:15px; font-style:italic; color:#555; }
+  .before .meta { font-size:11px; color:#888; }
+  .before .inner { border:1px solid #c4b5fd; border-radius:20px; padding:12px; margin-top:12px; background:#f5f3ff; }
+  .before button { margin-top:12px; border:0; border-radius:20px; padding:10px 18px; color:#fff; font-size:16px; background:linear-gradient(90deg,#ec4899,#8b5cf6); }
+
+  /* AFTER: 去 AI 味 */
+  .after .card { background:var(--gray-1); border:0.5px solid var(--gray-6); border-radius:24px; padding:16px; }
+  .after h2 { font-size:20px; font-weight:600; margin:0 0 4px; }
+  .after p { font-size:14px; color:var(--gray-11); margin:0; line-height:1.6; }
+  .after .inner { background:var(--gray-3); border-radius:calc(24px - 16px); padding:12px; margin-top:16px; display:flex; justify-content:space-between; font-size:14px; }
+  .after .inner span:last-child { color:var(--gray-11); }
+  .after button { margin-top:16px; width:100%; border:0; border-radius:calc(24px - 16px); padding:12px; font:inherit; font-size:14px; font-weight:600; color:#fff; background:var(--accent); transition:transform 150ms ease-out; }
+  .after button:active { transform:scale(.97); }
+  @supports (corner-shape: superellipse(1.25)) { .after :where(.card,.inner,button) { corner-shape: superellipse(1.25); } }
+</style>
+</head>
+<body>
+<h1 class="page">去 AI 味：前后对比</h1>
+<div class="wrap">
+  <section>
+    <div class="label">Before：紫色渐变、全大写眉标、1px 彩边、左侧彩色竖线、多层阴影、圆角不同心、emoji、· 分隔、5 种字号</div>
+    <div class="before">
+      <div class="card">
+        <div class="eyebrow">✨ Premium Plan</div>
+        <h2>🚀 升级到专业版</h2>
+        <p>解锁全部强大功能，让你的工作效率飞跃提升，开启全新的生产力之旅！</p>
+        <div class="meta">每月 · 随时取消 · 10,000+ 满意用户</div>
+        <div class="inner">💎 ¥68 / 月</div>
+        <button>立即升级 →</button>
+      </div>
+    </div>
+  </section>
+  <section class="after">
+    <div class="label">After：灰阶外壳 + 1 个强调色、0.5px 边框、3 种字号、圆角 24 → 8（= 24 − 16）、无装饰</div>
+    <div class="card">
+      <h2>专业版</h2>
+      <p>无限项目与团队协作，可随时取消。</p>
+      <div class="inner"><span>¥68</span><span>每月</span></div>
+      <button>升级</button>
+    </div>
+  </section>
+</div>
+</body>
+</html>
